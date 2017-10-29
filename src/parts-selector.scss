@@ -1,0 +1,156 @@
+$list-border-width: 2px;
+$list-bg-colour: #fff;
+$list-border-colour: #dfdfdf;
+$list-border-radius: 3px;
+$break-point: 768px;
+$spacer: 15px;
+$selected-bg-colour: #2196f3;
+$selected-text-colour: #fff;
+$success-colour: #2196f3;
+$icon-colour: #dfdfdf;
+
+.parts-selector {
+
+  @media screen and (min-width: $break-point) {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .list {
+    border: solid $list-border-width $list-border-colour;
+    flex-grow: 1;
+    background-color: $list-bg-colour;
+    border-radius: $list-border-radius;
+    flex-basis: 0;
+    min-height: 2em;
+
+    .list-heading {
+      font-size: 1em;
+      margin: 0;
+      padding: $spacer/2 $spacer;
+      border-bottom: solid $list-border-width rgba($list-border-colour, 0.5);
+    }
+
+    ul {
+      padding: 0;
+      margin: 0;
+    }
+
+    li {
+      display: block;
+      border-bottom: solid 1px rgba($list-border-colour, 0.5);
+      padding: $spacer/2 $spacer;
+
+      .message {
+        display: block;
+        font-size: 0.8em;
+      }
+
+      &.selected,
+      &.just.moved {
+        a {
+          color: inherit;
+          text-decoration: underline;
+        }
+      }
+
+      &.selected {
+        background-color: $selected-bg-colour;
+        color: $selected-text-colour;
+      }
+
+      &.moved {
+        transition: all .75s;
+
+        .message {
+          background-color: $success-colour;
+          color: $selected-text-colour;
+          margin-left: -$spacer;
+          margin-right: -$spacer;
+          padding: $spacer/4 $spacer;
+          position: relative;
+          bottom: -$spacer/2;
+        }
+
+        &.just {
+          background-color: rgba($success-colour, 0.1);
+        }
+      }
+    }
+  }
+
+  .controls {
+    text-align: center;
+
+    @media screen and (min-width: $break-point) {
+      flex-grow: 0;
+      display: flex;
+      flex-direction: column;
+      align-self: center;
+    }
+
+    .moveto {
+      margin: $spacer/4 $spacer;
+      cursor: pointer;
+      text-decoration: none;
+      position: relative;
+      display: inline-block;
+
+      .icon {
+        display: block;
+        position: relative;
+        width: 2em;
+        height: 2em;
+        line-height: 2em;
+        text-align: center;
+        //background-color: #ff00ff;
+
+        &:before,
+        &:after {
+          content: '';
+          height: 1em;
+          width: 0.2em;
+          background-color: $icon-colour;
+          position: absolute;
+          top: 50%;
+          margin-top: -0.5em;
+        }
+
+        &:before {
+          left: 0.6em;
+          transform: rotate(45deg);
+        }
+
+        &:after {
+          right: 0.6em;
+          transform: rotate(-45deg);
+        }
+      }
+
+      &.selected {
+        .icon {
+          &:before {
+            left: 0.6em;
+            transform: rotate(135deg);
+          }
+
+          &:after {
+            right: 0.6em;
+            transform: rotate(-135deg);
+          }
+        }
+      }
+
+      @media screen and (min-width: $break-point) {
+        transform: rotate(-90deg);
+      }
+
+      .text {
+        display: block;
+        width: 0;
+        height: 0;
+        overflow: hidden;
+      }
+    }
+  }
+}

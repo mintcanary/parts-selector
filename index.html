@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Parts Selector</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.rawgit.com/mblode/marx/master/css/marx.min.css">
+    <link rel="stylesheet" href="parts-selector.css">
+  </head>
+  <body>
+
+    <main>
+      <h1>Parts Selector</h1>
+      <p>
+        The Parts Selector can be used to choose items from one list, then add to another.
+      </p>
+
+      <div class="parts-selector" id="my-parts-selector">
+        <div class="parts list">
+          <h3 class="list-heading">Available items</h3>
+          <ul>
+            <li>
+              Bolt
+            </li>
+            <li>
+              Nut
+            </li>
+            <li>
+              Screw
+            </li>
+            <li>
+              Washer
+            </li>
+          </ul>
+        </div>
+
+
+        <div class="controls">
+          <a class="moveto selected"><span class="icon"></span><span class="text">Add</span></a>
+          <a class="moveto parts"><span class="icon"></span><span class="text">Remove</span></a>
+        </div>
+
+        <div class="selected list">
+          <h3 class="list-heading">Chosen items</h3>
+          <ul>
+          </ul>
+        </div>
+
+      </div>
+
+    </main>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+    <script>window.jQuery || document.write('<script src="vendor/jquery-3.2.1.min.js"><\/script>')</script>
+    <script src="vendor/jquery.finderselect.js"></script>
+    <script src="src/parts-selector.js"></script>
+    <script>
+      $(function() {
+        $( "#my-parts-selector" ).partsSelector();
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,21 @@
+{
+  "name": "parts-selector",
+  "version": "1.0.0",
+  "description": "A jQuery plugin for choosing items from a list.",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/smth/parts-selector.git"
+  },
+  "author": "Sam Smith",
+  "bugs": {
+    "url": "https://github.com/smth/parts-selector/issues"
+  },
+  "homepage": "http://p.smth.uk/parts-selector",
+  "devDependencies": {
+    "autoprefixer": "^7.1.6",
+    "grunt": "^1.0.1",
+    "grunt-contrib-watch": "^1.0.0",
+    "grunt-postcss": "^0.9.0",
+    "grunt-sass": "^2.0.0"
+  }
+}
