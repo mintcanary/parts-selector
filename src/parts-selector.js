@@ -35,13 +35,15 @@ $(function() {
 
     // move items to parts list
     $('.moveto.parts').click(function() {
-      $(this).closest('.parts-selector').find('.parts.list ul').append($('.selected.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
+      var $i = $(this).closest('.parts-selector');
+      $($i).find('.parts.list ul').append($($i).find('.selected.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
       removeMoved();
     });
 
     // move items to selected list
     $('.moveto.selected').click(function() {
-      $(this).closest('.parts-selector').find('.selected.list ul').append($('.parts.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
+      var $i = $(this).closest('.parts-selector');
+      $($i).find('.selected.list ul').append($($i).find('.parts.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
       removeMoved();
     });
 
