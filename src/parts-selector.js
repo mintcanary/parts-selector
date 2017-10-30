@@ -13,6 +13,7 @@ $(function() {
       // defaults
       added: "Item added",
       removed: "Item removed",
+      noneSelected: "Click on items below to select them",
       itemButtons: false
     }, options );
 
@@ -34,17 +35,43 @@ $(function() {
     }
 
     // move items to parts list
-    $('.moveto.parts').click(function() {
+    $(this).on('click', '.moveto.parts', function() {
       var $i = $(this).closest('.parts-selector');
-      $($i).find('.parts.list ul').append($($i).find('.selected.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
-      removeMoved();
+      var $c = $($i).find('.selected.list li.selected').length;
+
+      if ($c > 0) {
+        $($i).find('.parts.list ul').append($($i).find('.selected.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
+        removeMoved();
+      } else {
+        $($i).find('.selected.list ul').prepend('<span class="none-selected alert">' + settings.noneSelected + '</span>');
+        setTimeout(function(){
+          $( '.alert' ).slideUp('1000');
+
+          setTimeout(function(){
+            $( '.alert' ).remove();
+          }, 1000);
+        }, 3000);
+      }
     });
 
     // move items to selected list
-    $('.moveto.selected').click(function() {
+    $(this).on('click', '.moveto.selected', function() {
       var $i = $(this).closest('.parts-selector');
-      $($i).find('.selected.list ul').append($($i).find('.parts.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
-      removeMoved();
+      var $c = $($i).find('.parts.list li.selected').length;
+
+      if ($c > 0) {
+        $($i).find('.selected.list ul').append($($i).find('.parts.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
+        removeMoved();
+      } else {
+        $($i).find('.parts.list ul').prepend('<span class="none-selected alert">' + settings.noneSelected + '</span>');
+        setTimeout(function(){
+          $( '.alert' ).slideUp('1000');
+
+          setTimeout(function(){
+            $( '.alert' ).remove();
+          }, 1000);
+        }, 3000);
+      }
     });
 
     // item buttons

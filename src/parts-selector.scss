@@ -8,6 +8,7 @@ $list-margin: $spacer*2;
 $selected-bg-colour: #2196f3;
 $selected-text-colour: #fff;
 $success-colour: #2196f3;
+$info-colour: #2196f3;
 $icon-colour: #dfdfdf;
 
 .parts-selector {
@@ -39,16 +40,25 @@ $icon-colour: #dfdfdf;
       margin: 0;
     }
 
+    .message,
+    .alert {
+      display: block;
+      font-size: 0.8em;
+      padding: $spacer/4 $spacer;
+    }
+
+    .alert {
+      &.none-selected {
+        background-color: $info-colour;
+        color: $selected-text-colour;
+      }
+    }
+
     li {
       display: block;
       border-bottom: solid 1px rgba($list-border-colour, 0.5);
       padding: $spacer/2 $spacer;
       position: relative;
-
-      .message {
-        display: block;
-        font-size: 0.8em;
-      }
 
       &.selected,
       &.just.moved {
@@ -78,7 +88,6 @@ $icon-colour: #dfdfdf;
           color: $selected-text-colour;
           margin-left: -$spacer;
           margin-right: -$spacer;
-          padding: $spacer/4 $spacer;
           position: relative;
           bottom: -$spacer/2;
         }
