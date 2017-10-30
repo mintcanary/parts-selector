@@ -18,7 +18,42 @@ $(function() {
     }, options );
 
     // use finderSelect for select classes
-    this.find('ul').finderSelect({selectClass:'selected'});
+    var instance = this.find('ul').finderSelect({selectClass:'selected'});
+
+    // do stuff after selecting
+    instance.finderSelect('addHook','highlight:after', function() {
+      var $i = $(instance).closest('.parts-selector');
+      var $partsList = $($i).find('.parts.list');
+      var $partsCount = $($partsList).find('li.selected').length;
+      var $selectedList = $($i).find('.selected.list');
+      var $selectedCount = $($selectedList).find('li.selected').length;
+
+      // add classes
+      if ($partsCount > 0) {
+        $($i).addClass('parts-selected');
+      }
+      if ($selectedCount > 0) {
+        $($i).addClass('selected-selected');
+      }
+    });
+
+    // do stuff after deselecting
+    instance.finderSelect('addHook','unHighlight:after', function() {
+      var $i = $(instance).closest('.parts-selector');
+      var $partsList = $($i).find('.parts.list');
+      var $partsCount = $($partsList).find('li.selected').length;
+      var $selectedList = $($i).find('.selected.list');
+      var $selectedCount = $($selectedList).find('li.selected').length;
+
+      // remove classes
+      if ($partsCount < 1) {
+        $($i).removeClass('parts-selected');
+      }
+      if ($selectedCount < 1) {
+        $($i).removeClass('selected-selected');
+      }
+    });
+
 
     // selector
     // remove messages
@@ -34,15 +69,18 @@ $(function() {
       }, 2000);
     }
 
-    // move items to parts list
+    // clicking on remove button
     $(this).on('click', '.moveto.parts', function() {
       var $i = $(this).closest('.parts-selector');
       var $c = $($i).find('.selected.list li.selected').length;
 
       if ($c > 0) {
+        // move items to parts list
         $($i).find('.parts.list ul').append($($i).find('.selected.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
         removeMoved();
+        $($i).removeClass('selected-selected');
       } else {
+        // show a message
         $($i).find('.selected.list ul').prepend('<span class="none-selected alert">' + settings.noneSelected + '</span>');
         setTimeout(function(){
           $( '.alert' ).slideUp('1000');
@@ -54,15 +92,18 @@ $(function() {
       }
     });
 
-    // move items to selected list
+    // clicking on add button
     $(this).on('click', '.moveto.selected', function() {
       var $i = $(this).closest('.parts-selector');
       var $c = $($i).find('.parts.list li.selected').length;
 
       if ($c > 0) {
+        // move items to selected list
         $($i).find('.selected.list ul').append($($i).find('.parts.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
         removeMoved();
+        $($i).removeClass('parts-selected');
       } else {
+        // show a message
         $($i).find('.parts.list ul').prepend('<span class="none-selected alert">' + settings.noneSelected + '</span>');
         setTimeout(function(){
           $( '.alert' ).slideUp('1000');
@@ -93,8 +134,10 @@ $(function() {
       // move item from parts to selected
       $(this).on('click', '.parts.list li .add.item-button', function() {
         var $item = $(this).closest('li');
-        $(this).closest('.parts-selector').find('.selected.list ul').append($($(this).closest('li')).addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
+        var $i = $($item).closest('.parts-selector');
+        $($i).find('.selected.list ul').append($($(this).closest('li')).addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
         removeMoved();
+        $($i).removeClass('parts-selected');
         swapContextSelected($item);
         $($item).removeClass('selected');
       });
@@ -107,8 +150,10 @@ $(function() {
       // move item from selected to parts
       $(this).on('click', '.selected.list li .remove.item-button', function() {
         var $item = $(this).closest('li');
-        $(this).closest('.parts-selector').find('.parts.list ul').append($($(this).closest('li')).addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
+        var $i = $($item).closest('.parts-selector');
+        $($i).find('.parts.list ul').append($($(this).closest('li')).addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
         removeMoved();
+        $($i).removeClass('selected-selected');
         swapContextParts($item);
         $($item).removeClass('selected');
       });
