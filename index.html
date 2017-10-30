@@ -17,7 +17,36 @@
         The Parts Selector can be used to choose items from one list, then add to another.
       </p>
 
-      <div class="parts-selector" id="my-parts-selector">
+      <div class="parts-selector" id="parts-selector-1">
+        <div class="parts list">
+          <h3 class="list-heading">Available items</h3>
+          <ul>
+            <li>
+              Bolt
+            </li>
+            <li>
+              Nut
+            </li>
+            <li>
+              Screw
+            </li>
+            <li>
+              Washer
+            </li>
+          </ul>
+        </div>
+        <div class="controls">
+          <a class="moveto selected"><span class="icon"></span><span class="text">Add</span></a>
+          <a class="moveto parts"><span class="icon"></span><span class="text">Remove</span></a>
+        </div>
+        <div class="selected list">
+          <h3 class="list-heading">Chosen items</h3>
+          <ul>
+          </ul>
+        </div>
+      </div>
+
+      <div class="parts-selector" id="parts-selector-2">
         <div class="parts list">
           <h3 class="list-heading">Available items</h3>
           <ul>
@@ -54,7 +83,11 @@
     <script src="src/parts-selector.js"></script>
     <script>
       $(function() {
-        $( "#my-parts-selector" ).partsSelector();
+        $( "#parts-selector-1" ).partsSelector();
+
+        $( "#parts-selector-2" ).partsSelector({
+          itemButtons: true
+        });
       });
     </script>
   </body>
