@@ -1,48 +1,48 @@
-$list-border-width: 2px;
-$list-bg-colour: #fff;
-$list-border-colour: #dfdfdf;
-$list-border-radius: 3px;
-$break-point: 768px;
-$spacer: 15px;
-$list-margin: $spacer*2;
-$list-item-text-colour: rgba(0,0,0,.7);
-$list-heading-text-colour: rgba(0,0,0,.8);
-$selected-bg-colour: #2196f3;
-$selected-text-colour: #fff;
-$success-bg-colour: #2196f3;
-$success-text-colour: $selected-text-colour;
-$info-bg-colour: #2196f3;
-$info-text-colour: $selected-text-colour;
-$error-bg-colour: #2196f3;
-$error-text-colour: $selected-text-colour;
-$control-icon-colour: #dfdfdf;
-$control-icon-ready-colour: darken($control-icon-colour, 10%);
-$inline-icon-colour: $control-icon-colour;
+$parts-selector-list-border-width: 2px !default;
+$parts-selector-list-bg-colour: #fff !default;
+$parts-selector-list-border-colour: #dfdfdf !default;
+$parts-selector-list-border-radius: 3px !default;
+$parts-selector-break-point: 768px !default;
+$parts-selector-spacer: 15px !default;
+$parts-selector-list-margin: $parts-selector-spacer*2 !default;
+$parts-selector-list-item-text-colour: rgba(0,0,0,.7) !default;
+$parts-selector-list-heading-text-colour: rgba(0,0,0,.8) !default;
+$parts-selector-selected-bg-colour: #2196f3 !default;
+$parts-selector-selected-text-colour: #fff !default;
+$parts-selector-success-bg-colour: #2196f3 !default;
+$parts-selector-success-text-colour: $parts-selector-selected-text-colour !default;
+$parts-selector-info-bg-colour: #2196f3 !default;
+$parts-selector-info-text-colour: $parts-selector-selected-text-colour !default;
+$parts-selector-error-bg-colour: #2196f3 !default;
+$parts-selector-error-text-colour: $parts-selector-selected-text-colour !default;
+$parts-selector-control-icon-colour: #dfdfdf !default;
+$parts-selector-control-icon-ready-colour: darken($parts-selector-control-icon-colour, 10%) !default;
+$parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default;
 
 
 .parts-selector {
-  margin-top: $list-margin;
-  margin-bottom: $list-margin;
+  margin-top: $parts-selector-list-margin;
+  margin-bottom: $parts-selector-list-margin;
 
-  @media screen and (min-width: $break-point) {
+  @media screen and (min-width: $parts-selector-break-point) {
     display: flex;
     flex-direction: row;
   }
 
   .list {
-    border: solid $list-border-width $list-border-colour;
+    border: solid $parts-selector-list-border-width $parts-selector-list-border-colour;
     flex-grow: 1;
-    background-color: $list-bg-colour;
-    border-radius: $list-border-radius;
+    background-color: $parts-selector-list-bg-colour;
+    border-radius: $parts-selector-list-border-radius;
     flex-basis: 0;
     min-height: 2em;
 
     .list-heading {
       font-size: 1em;
       margin: 0;
-      padding: $spacer/2 $spacer;
-      border-bottom: solid $list-border-width rgba($list-border-colour, 0.5);
-      color: $list-heading-text-colour;
+      padding: $parts-selector-spacer/2 $parts-selector-spacer;
+      border-bottom: solid $parts-selector-list-border-width rgba($parts-selector-list-border-colour, 0.5);
+      color: $parts-selector-list-heading-text-colour;
     }
 
     ul {
@@ -54,26 +54,26 @@ $inline-icon-colour: $control-icon-colour;
     .alert {
       display: block;
       font-size: 0.8em;
-      padding: $spacer/4 $spacer;
+      padding: $parts-selector-spacer/4 $parts-selector-spacer;
     }
 
     .alert {
       &.info {
-        background-color: $info-bg-colour;
-        color: $info-text-colour;
+        background-color: $parts-selector-info-bg-colour;
+        color: $parts-selector-info-text-colour;
       }
       &.error {
-        background-color: $error-bg-colour;
-        color: $error-text-colour;
+        background-color: $parts-selector-error-bg-colour;
+        color: $parts-selector-error-text-colour;
       }
     }
 
     li {
       display: block;
-      border-bottom: solid 1px rgba($list-border-colour, 0.5);
-      padding: $spacer/2 $spacer;
+      border-bottom: solid 1px rgba($parts-selector-list-border-colour, 0.5);
+      padding: $parts-selector-spacer/2 $parts-selector-spacer;
       position: relative;
-      color: $list-item-text-colour;
+      color: $parts-selector-list-item-text-colour;
 
       &.selected,
       &.just.moved {
@@ -84,13 +84,13 @@ $inline-icon-colour: $control-icon-colour;
       }
 
       &.selected {
-        background-color: $selected-bg-colour;
-        color: $selected-text-colour;
+        background-color: $parts-selector-selected-bg-colour;
+        color: $parts-selector-selected-text-colour;
 
         .item-button .icon {
           &:before,
           &:after {
-            background-color: $selected-text-colour;
+            background-color: $parts-selector-selected-text-colour;
           }
         }
       }
@@ -99,16 +99,16 @@ $inline-icon-colour: $control-icon-colour;
         transition: all .75s;
 
         .message {
-          background-color: $success-bg-colour;
-          color: $success-text-colour;
-          margin-left: -$spacer;
-          margin-right: -$spacer;
+          background-color: $parts-selector-success-bg-colour;
+          color: $parts-selector-success-text-colour;
+          margin-left: -$parts-selector-spacer;
+          margin-right: -$parts-selector-spacer;
           position: relative;
-          bottom: -$spacer/2;
+          bottom: -$parts-selector-spacer/2;
         }
 
         &.just {
-          background-color: rgba($success-bg-colour, 0.1);
+          background-color: rgba($parts-selector-success-bg-colour, 0.1);
 
           .item-button .icon {
             background-color: rgba(#fff,0.9);
@@ -136,7 +136,7 @@ $inline-icon-colour: $control-icon-colour;
             position: absolute;
             width: 11px;
             height: 3px;
-            background-color: $control-icon-colour;
+            background-color: $parts-selector-control-icon-colour;
             top: 9px;
             left: 5px;
           }
@@ -158,7 +158,7 @@ $inline-icon-colour: $control-icon-colour;
         &:hover {
           .icon:before,
           .icon:after {
-            background-color: $selected-bg-colour;
+            background-color: $parts-selector-selected-bg-colour;
           }
         }
       }
@@ -168,7 +168,7 @@ $inline-icon-colour: $control-icon-colour;
   .controls {
     text-align: center;
 
-    @media screen and (min-width: $break-point) {
+    @media screen and (min-width: $parts-selector-break-point) {
       flex-grow: 0;
       display: flex;
       flex-direction: column;
@@ -176,7 +176,7 @@ $inline-icon-colour: $control-icon-colour;
     }
 
     .moveto {
-      margin: $spacer/4 $spacer;
+      margin: $parts-selector-spacer/4 $parts-selector-spacer;
       cursor: pointer;
       text-decoration: none;
       position: relative;
@@ -195,7 +195,7 @@ $inline-icon-colour: $control-icon-colour;
           content: '';
           height: 1em;
           width: 0.2em;
-          background-color: $control-icon-colour;
+          background-color: $parts-selector-control-icon-colour;
           position: absolute;
           top: 50%;
           margin-top: -0.5em;
@@ -227,7 +227,7 @@ $inline-icon-colour: $control-icon-colour;
         }
       }
 
-      @media screen and (min-width: $break-point) {
+      @media screen and (min-width: $parts-selector-break-point) {
         transform: rotate(-90deg);
       }
 
@@ -245,7 +245,7 @@ $inline-icon-colour: $control-icon-colour;
       .moveto.selected {
         .icon:before,
         .icon:after {
-          background-color: $control-icon-ready-colour;
+          background-color: $parts-selector-control-icon-ready-colour;
         }
       }
     }
@@ -255,7 +255,7 @@ $inline-icon-colour: $control-icon-colour;
       .moveto.parts {
         .icon:before,
         .icon:after {
-          background-color: $control-icon-ready-colour;
+          background-color: $parts-selector-control-icon-ready-colour;
         }
       }
     }
