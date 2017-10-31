@@ -139,6 +139,13 @@ $icon-colour: #dfdfdf;
         &.remove .icon:after {
           display: none;
         }
+
+        &:hover {
+          .icon:before,
+          .icon:after {
+            background-color: $selected-bg-colour;
+          }
+        }
       }
     }
   }
@@ -167,7 +174,6 @@ $icon-colour: #dfdfdf;
         height: 2em;
         line-height: 2em;
         text-align: center;
-        //background-color: #ff00ff;
 
         &:before,
         &:after {
@@ -178,6 +184,7 @@ $icon-colour: #dfdfdf;
           position: absolute;
           top: 50%;
           margin-top: -0.5em;
+          transition: background-color .7s;
         }
 
         &:before {
@@ -214,6 +221,27 @@ $icon-colour: #dfdfdf;
         width: 0;
         height: 0;
         overflow: hidden;
+      }
+    }
+  }
+
+  &.parts-selected {
+    .controls {
+      .moveto.selected {
+        .icon:before,
+        .icon:after {
+          background-color: darken($icon-colour, 10%);
+        }
+      }
+    }
+  }
+  &.selected-selected {
+    .controls {
+      .moveto.parts {
+        .icon:before,
+        .icon:after {
+          background-color: darken($icon-colour, 10%);
+        }
       }
     }
   }

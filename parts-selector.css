@@ -93,6 +93,9 @@
           overflow: hidden; }
         .parts-selector .list li .item-button.remove .icon:after {
           display: none; }
+        .parts-selector .list li .item-button:hover .icon:before,
+        .parts-selector .list li .item-button:hover .icon:after {
+          background-color: #2196f3; }
   .parts-selector .controls {
     text-align: center; }
     @media screen and (min-width: 768px) {
@@ -129,7 +132,9 @@
           background-color: #dfdfdf;
           position: absolute;
           top: 50%;
-          margin-top: -0.5em; }
+          margin-top: -0.5em;
+          -webkit-transition: background-color .7s;
+          transition: background-color .7s; }
         .parts-selector .controls .moveto .icon:before {
           left: 0.6em;
           -webkit-transform: rotate(45deg);
@@ -155,3 +160,9 @@
         width: 0;
         height: 0;
         overflow: hidden; }
+  .parts-selector.parts-selected .controls .moveto.selected .icon:before,
+  .parts-selector.parts-selected .controls .moveto.selected .icon:after {
+    background-color: #c6c5c5; }
+  .parts-selector.selected-selected .controls .moveto.parts .icon:before,
+  .parts-selector.selected-selected .controls .moveto.parts .icon:after {
+    background-color: #c6c5c5; }
