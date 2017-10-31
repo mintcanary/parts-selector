@@ -5,11 +5,20 @@ $list-border-radius: 3px;
 $break-point: 768px;
 $spacer: 15px;
 $list-margin: $spacer*2;
+$list-item-text-colour: rgba(0,0,0,.7);
+$list-heading-text-colour: rgba(0,0,0,.8);
 $selected-bg-colour: #2196f3;
 $selected-text-colour: #fff;
-$success-colour: #2196f3;
-$info-colour: #2196f3;
-$icon-colour: #dfdfdf;
+$success-bg-colour: #2196f3;
+$success-text-colour: $selected-text-colour;
+$info-bg-colour: #2196f3;
+$info-text-colour: $selected-text-colour;
+$error-bg-colour: #2196f3;
+$error-text-colour: $selected-text-colour;
+$control-icon-colour: #dfdfdf;
+$control-icon-ready-colour: darken($control-icon-colour, 10%);
+$inline-icon-colour: $control-icon-colour;
+
 
 .parts-selector {
   margin-top: $list-margin;
@@ -33,6 +42,7 @@ $icon-colour: #dfdfdf;
       margin: 0;
       padding: $spacer/2 $spacer;
       border-bottom: solid $list-border-width rgba($list-border-colour, 0.5);
+      color: $list-heading-text-colour;
     }
 
     ul {
@@ -48,9 +58,13 @@ $icon-colour: #dfdfdf;
     }
 
     .alert {
-      &.none-selected {
-        background-color: $info-colour;
-        color: $selected-text-colour;
+      &.info {
+        background-color: $info-bg-colour;
+        color: $info-text-colour;
+      }
+      &.error {
+        background-color: $error-bg-colour;
+        color: $error-text-colour;
       }
     }
 
@@ -59,6 +73,7 @@ $icon-colour: #dfdfdf;
       border-bottom: solid 1px rgba($list-border-colour, 0.5);
       padding: $spacer/2 $spacer;
       position: relative;
+      color: $list-item-text-colour;
 
       &.selected,
       &.just.moved {
@@ -84,8 +99,8 @@ $icon-colour: #dfdfdf;
         transition: all .75s;
 
         .message {
-          background-color: $success-colour;
-          color: $selected-text-colour;
+          background-color: $success-bg-colour;
+          color: $success-text-colour;
           margin-left: -$spacer;
           margin-right: -$spacer;
           position: relative;
@@ -93,7 +108,7 @@ $icon-colour: #dfdfdf;
         }
 
         &.just {
-          background-color: rgba($success-colour, 0.1);
+          background-color: rgba($success-bg-colour, 0.1);
 
           .item-button .icon {
             background-color: rgba(#fff,0.9);
@@ -121,7 +136,7 @@ $icon-colour: #dfdfdf;
             position: absolute;
             width: 11px;
             height: 3px;
-            background-color: $icon-colour;
+            background-color: $control-icon-colour;
             top: 9px;
             left: 5px;
           }
@@ -180,7 +195,7 @@ $icon-colour: #dfdfdf;
           content: '';
           height: 1em;
           width: 0.2em;
-          background-color: $icon-colour;
+          background-color: $control-icon-colour;
           position: absolute;
           top: 50%;
           margin-top: -0.5em;
@@ -230,7 +245,7 @@ $icon-colour: #dfdfdf;
       .moveto.selected {
         .icon:before,
         .icon:after {
-          background-color: darken($icon-colour, 10%);
+          background-color: $control-icon-ready-colour;
         }
       }
     }
@@ -240,7 +255,7 @@ $icon-colour: #dfdfdf;
       .moveto.parts {
         .icon:before,
         .icon:after {
-          background-color: darken($icon-colour, 10%);
+          background-color: $control-icon-ready-colour;
         }
       }
     }

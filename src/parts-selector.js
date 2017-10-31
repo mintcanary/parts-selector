@@ -81,7 +81,7 @@ $(function() {
         $($i).removeClass('selected-selected');
       } else {
         // show a message
-        $($i).find('.selected.list ul').prepend('<span class="none-selected alert">' + settings.noneSelected + '</span>');
+        $($i).find('.selected.list ul').prepend('<span class="info alert">' + settings.noneSelected + '</span>');
         setTimeout(function(){
           $( '.alert' ).slideUp('1000');
 
@@ -104,7 +104,7 @@ $(function() {
         $($i).removeClass('parts-selected');
       } else {
         // show a message
-        $($i).find('.parts.list ul').prepend('<span class="none-selected alert">' + settings.noneSelected + '</span>');
+        $($i).find('.parts.list ul').prepend('<span class="info alert">' + settings.noneSelected + '</span>');
         setTimeout(function(){
           $( '.alert' ).slideUp('1000');
 
