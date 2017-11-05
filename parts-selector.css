@@ -52,7 +52,7 @@
       .parts-selector .list li.selected {
         background-color: #2196f3;
         color: #fff; }
-        .parts-selector .list li.selected .item-button .icon:before, .parts-selector .list li.selected .item-button .icon:after {
+        .parts-selector .list li.selected .item-button .icon:before, .parts-selector .list li.selected .item-button .icon:after, .parts-selector .list li.selected .item-button:hover .icon:before, .parts-selector .list li.selected .item-button:hover .icon:after {
           background-color: #fff; }
       .parts-selector .list li.moved {
         -webkit-transition: all .75s;

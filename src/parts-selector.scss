@@ -88,10 +88,15 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
         background-color: $parts-selector-selected-bg-colour;
         color: $parts-selector-selected-text-colour;
 
-        .item-button .icon {
-          &:before,
-          &:after {
-            background-color: $parts-selector-selected-text-colour;
+        .item-button {
+          &,
+          &:hover {
+            .icon {
+              &:before,
+              &:after {
+                background-color: $parts-selector-selected-text-colour;
+              }
+            }
           }
         }
       }
