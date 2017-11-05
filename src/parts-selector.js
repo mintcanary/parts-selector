@@ -1,4 +1,4 @@
-// partsSelector: a jQuery plugin for choosing items from a list.
+// partsSelector: Core code.
 //
 // Sam Smith
 //

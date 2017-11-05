@@ -1,5 +1,5 @@
 {
-  "name": "parts-selector",
+  "name": "partsSelector",
   "version": "1.0.0",
   "description": "A jQuery plugin for choosing items from a list.",
   "repository": {
@@ -14,8 +14,13 @@
   "devDependencies": {
     "autoprefixer": "^7.1.6",
     "grunt": "^1.0.1",
+    "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^2.0.0"
+    "grunt-sass": "^2.0.0",
+    "napa": "^3.0.0"
+  },
+  "scripts": {
+    "install": "napa evulse/finderselect"
   }
 }
