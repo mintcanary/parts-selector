@@ -27,13 +27,6 @@ module.exports = function(grunt) {
       }
     },
 
-    watch: {
-    	css: {
-    		files: 'src/*.scss',
-    		tasks: ['sass', 'postcss:dist']
-    	}
-    },
-
     concat: {
       options: {
         separator: '\n',
@@ -43,6 +36,17 @@ module.exports = function(grunt) {
         src: ['node_modules/finderselect/jquery.finderSelect.js', 'src/parts-selector.js'],
         dest: 'parts-selector.js',
       },
+    },
+
+    watch: {
+      css: {
+        files: 'src/*.scss',
+        tasks: ['sass', 'postcss:dist']
+      },
+      js: {
+        files: 'src/*.js',
+        tasks: ['concat']
+      }
     }
 
   });
