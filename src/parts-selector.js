@@ -1,4 +1,4 @@
-// partsSelector: Core code.
+// parts-selector: Core code.
 //
 // Sam Smith
 //

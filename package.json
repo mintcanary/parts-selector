@@ -1,5 +1,5 @@
 {
-  "name": "partsSelector",
+  "name": "parts-selector",
   "version": "1.0.0",
   "description": "A jQuery plugin for choosing items from a list.",
   "repository": {

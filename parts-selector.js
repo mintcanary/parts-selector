@@ -1,4 +1,4 @@
-/*! partsSelector: A jQuery plugin for choosing items from a list. 
+/*! parts-selector: A jQuery plugin for choosing items from a list. 
  *
  * Sam Smith 
  *
@@ -585,7 +585,7 @@
 
 })(window.jQuery || window.Zepto);
 
-// partsSelector: Core code.
+// parts-selector: Core code.
 //
 // Sam Smith
 //
