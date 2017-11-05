@@ -705,7 +705,9 @@ $(function() {
     // item buttons
     if (settings.itemButtons == true) {
       // add buttons
-      this.find('ul li').append( '<a class="add item-button"><span class="icon"></span><span class="text">Add</span></a>' );
+      this.find('.parts.list ul li').append( '<a class="add item-button"><span class="icon"></span><span class="text">Add</span></a>' );
+
+      this.find('.selected.list ul li').append( '<a class="remove item-button"><span class="icon"></span><span class="text">Remove</span></a>' );
 
       // change context button from add to remove
       function swapContextSelected( trigger ) {
