@@ -126,7 +126,7 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
           height: 20px;
           position: absolute;
           top: 50%;
-          right: 0.5em;
+          right: $parts-selector-h-space/2;
           margin-top: -10px;
           border-radius: 50%;
 
