@@ -607,6 +607,11 @@ $(function() {
     // use finderSelect for select classes
     var instance = this.find('ul').finderSelect({selectClass:'selected'});
 
+    // when clicking anchors, don't select list item
+    instance.on("mousedown","a", function(e){
+      e.stopPropagation();
+    });
+
     // do stuff after selecting
     instance.finderSelect('addHook','highlight:after', function() {
       var $i = $(instance).closest('.parts-selector');
@@ -724,7 +729,10 @@ $(function() {
       $(this).on('click', '.parts.list li .add.item-button', function() {
         var $item = $(this).closest('li');
         var $i = $($item).closest('.parts-selector');
+        // item
         $($i).find('.selected.list ul').append($($(this).closest('li')).addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
+        // selected items
+        $($i).find('.selected.list ul').append($($i).find('.parts.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
         removeMoved();
         $($i).removeClass('parts-selected');
         swapContextSelected($item);
@@ -740,7 +748,10 @@ $(function() {
       $(this).on('click', '.selected.list li .remove.item-button', function() {
         var $item = $(this).closest('li');
         var $i = $($item).closest('.parts-selector');
+        // item
         $($i).find('.parts.list ul').append($($(this).closest('li')).addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
+        // selected items
+        $($i).find('.parts.list ul').append($($i).find('.selected.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
         removeMoved();
         $($i).removeClass('selected-selected');
         swapContextParts($item);
