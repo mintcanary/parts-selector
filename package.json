@@ -17,10 +17,15 @@
     "grunt-contrib-concat": "^1.0.1",
     "grunt-contrib-watch": "^1.0.0",
     "grunt-postcss": "^0.9.0",
-    "grunt-sass": "^2.0.0",
+    "grunt-sass": "^2.0.0"
+  },
+  "dependencies": {
     "napa": "^3.0.0"
   },
   "scripts": {
-    "install": "napa evulse/finderselect"
+    "install": "napa"
+  },
+  "napa": {
+    "finderselect": "evulse/finderselect"
   }
 }
