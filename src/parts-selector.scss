@@ -3,8 +3,9 @@ $parts-selector-list-bg-colour: #fff !default;
 $parts-selector-list-border-colour: #dfdfdf !default;
 $parts-selector-list-border-radius: 3px !default;
 $parts-selector-break-point: 768px !default;
-$parts-selector-spacer: 15px !default;
-$parts-selector-list-margin: $parts-selector-spacer*2 !default;
+$parts-selector-v-space: 8px !default;
+$parts-selector-h-space: 16px !default;
+$parts-selector-list-margin: $parts-selector-v-space*4 !default;
 $parts-selector-list-item-text-colour: rgba(0,0,0,.7) !default;
 $parts-selector-list-heading-text-colour: rgba(0,0,0,.8) !default;
 $parts-selector-selected-bg-colour: #2196f3 !default;
@@ -40,7 +41,7 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
     .list-heading {
       font-size: 1em;
       margin: 0;
-      padding: $parts-selector-spacer/2 $parts-selector-spacer;
+      padding: $parts-selector-v-space $parts-selector-h-space;
       border-bottom: solid $parts-selector-list-border-width rgba($parts-selector-list-border-colour, 0.5);
       color: $parts-selector-list-heading-text-colour;
     }
@@ -54,7 +55,7 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
     .alert {
       display: block;
       font-size: 0.8em;
-      padding: $parts-selector-spacer/4 $parts-selector-spacer;
+      padding: $parts-selector-v-space/2 $parts-selector-h-space;
     }
 
     .alert {
@@ -71,7 +72,7 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
     li {
       display: block;
       border-bottom: solid 1px rgba($parts-selector-list-border-colour, 0.5);
-      padding: $parts-selector-spacer/2 $parts-selector-spacer;
+      padding: $parts-selector-v-space $parts-selector-h-space;
       position: relative;
       color: $parts-selector-list-item-text-colour;
 
@@ -101,10 +102,10 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
         .message {
           background-color: $parts-selector-success-bg-colour;
           color: $parts-selector-success-text-colour;
-          margin-left: -$parts-selector-spacer;
-          margin-right: -$parts-selector-spacer;
+          margin-left: -$parts-selector-h-space;
+          margin-right: -$parts-selector-h-space;
           position: relative;
-          bottom: -$parts-selector-spacer/2;
+          bottom: -$parts-selector-v-space;
         }
 
         &.just {
@@ -176,7 +177,7 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
     }
 
     .moveto {
-      margin: $parts-selector-spacer/4 $parts-selector-spacer;
+      margin: $parts-selector-v-space/2 $parts-selector-h-space;
       cursor: pointer;
       text-decoration: none;
       position: relative;
