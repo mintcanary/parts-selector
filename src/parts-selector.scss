@@ -2,6 +2,7 @@ $parts-selector-list-border-width: 2px !default;
 $parts-selector-list-bg-colour: #fff !default;
 $parts-selector-list-border-colour: #dfdfdf !default;
 $parts-selector-list-border-radius: 3px !default;
+$parts-selector-list-max-height: 90vh !default;
 $parts-selector-break-point: 768px !default;
 $parts-selector-v-space: 8px !default;
 $parts-selector-h-space: 16px !default;
@@ -39,7 +40,7 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
     min-height: 2em;
 
     @media screen and (min-width: $parts-selector-break-point) {
-      max-height: 90vh;
+      max-height: $parts-selector-list-max-height;
       overflow: auto;
     }
 
