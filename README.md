@@ -1,6 +1,6 @@
 # Parts Selector
 
-A jQuery plugin for choosing items from a list.
+A design pattern, and jQuery plugin for choosing items from a list.
 
 ## Demos
 
@@ -9,7 +9,7 @@ A jQuery plugin for choosing items from a list.
 
 ## Use
 
-Include `parts-selector.css` and `parts-selector.js`.
+Include `jQuery`, `parts-selector.css` and `parts-selector.js`.
 
 Markup:
 
