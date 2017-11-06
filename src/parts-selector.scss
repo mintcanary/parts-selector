@@ -189,7 +189,6 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
 
     .moveto {
       margin: $parts-selector-v-space/2 $parts-selector-h-space;
-      cursor: pointer;
       text-decoration: none;
       position: relative;
       display: inline-block;
@@ -255,6 +254,8 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
   &.parts-selected {
     .controls {
       .moveto.selected {
+        cursor: pointer;
+        
         .icon:before,
         .icon:after {
           background-color: $parts-selector-control-icon-ready-colour;
@@ -265,6 +266,8 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
   &.selected-selected {
     .controls {
       .moveto.parts {
+        cursor: pointer;
+
         .icon:before,
         .icon:after {
           background-color: $parts-selector-control-icon-ready-colour;

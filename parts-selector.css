@@ -123,7 +123,6 @@
             align-self: center; } }
     .parts-selector .controls .moveto {
       margin: 4px 16px;
-      cursor: pointer;
       text-decoration: none;
       position: relative;
       display: inline-block; }
@@ -169,9 +168,13 @@
         width: 0;
         height: 0;
         overflow: hidden; }
-  .parts-selector.parts-selected .controls .moveto.selected .icon:before,
-  .parts-selector.parts-selected .controls .moveto.selected .icon:after {
-    background-color: #c6c5c5; }
-  .parts-selector.selected-selected .controls .moveto.parts .icon:before,
-  .parts-selector.selected-selected .controls .moveto.parts .icon:after {
-    background-color: #c6c5c5; }
+  .parts-selector.parts-selected .controls .moveto.selected {
+    cursor: pointer; }
+    .parts-selector.parts-selected .controls .moveto.selected .icon:before,
+    .parts-selector.parts-selected .controls .moveto.selected .icon:after {
+      background-color: #c6c5c5; }
+  .parts-selector.selected-selected .controls .moveto.parts {
+    cursor: pointer; }
+    .parts-selector.selected-selected .controls .moveto.parts .icon:before,
+    .parts-selector.selected-selected .controls .moveto.parts .icon:after {
+      background-color: #c6c5c5; }
