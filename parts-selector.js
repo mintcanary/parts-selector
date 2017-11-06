@@ -601,7 +601,8 @@ $(function() {
       added: "Item added",
       removed: "Item removed",
       noneSelected: "Click on items below to select them",
-      itemButtons: false
+      itemButtons: false,
+      callback: function() {}
     }, options );
 
     // use finderSelect for select classes
@@ -671,6 +672,7 @@ $(function() {
         $($i).find('.parts.list ul').append($($i).find('.selected.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.removed + '</span>' ));
         removeMoved();
         $($i).removeClass('selected-selected');
+        settings.callback.call(this);
       } else {
         // show a message
         $($i).find('.selected.list ul').prepend('<span class="info alert">' + settings.noneSelected + '</span>');
@@ -694,6 +696,7 @@ $(function() {
         $($i).find('.selected.list ul').append($($i).find('.parts.list li.selected').removeClass('selected').addClass('just moved').append( '<span class="context message">' + settings.added + '</span>' ));
         removeMoved();
         $($i).removeClass('parts-selected');
+        settings.callback.call(this);
       } else {
         // show a message
         $($i).find('.parts.list ul').prepend('<span class="info alert">' + settings.noneSelected + '</span>');
@@ -737,6 +740,7 @@ $(function() {
         $($i).removeClass('parts-selected');
         swapContextSelected($item);
         $($item).removeClass('selected');
+        settings.callback.call(this);
       });
 
       // swap context button
@@ -756,6 +760,7 @@ $(function() {
         $($i).removeClass('selected-selected');
         swapContextParts($item);
         $($item).removeClass('selected');
+        settings.callback.call(this);
       });
 
       // swap context button
