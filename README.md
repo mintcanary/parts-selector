@@ -48,7 +48,7 @@ $( "#my-parts-selector" ).partsSelector();
 
 - `added`: Message displayed when an item is moved to "selected" list. (Default: `Item added`)
 - `removed`: Message displayed when an item is moved to "parts" list. (Default: `Item removed`)
-- `noneSelected`: Message displayed when controls are click, but nothing is selected. (Default: `Click on items below to select them`)
+- `noneSelected`: Message displayed when controls are clicked, but nothing is selected. (Default: `Click on items below to select them`)
 - `itemButtons`: Boolean, to enable inline buttons. (Default: `false`)
 - `callback`: Function called after an item is moved. (See below)
 
@@ -64,6 +64,6 @@ $( "#my-parts-selector" ).partsSelector({
 ```
 
 ## Dev
-It has a few [dependencies](package.json), so do `npm install`.
+There are a few [dependencies](package.json), so do `npm install`.
 
 `grunt` will watch for changes to your [SCSS and JS files](src).
