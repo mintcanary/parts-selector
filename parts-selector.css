@@ -93,8 +93,10 @@
             top: 9px;
             left: 5px; }
           .parts-selector .list li .item-button .icon:after {
-            -webkit-transform: rotate(90deg);
-                    transform: rotate(90deg); }
+            width: 3px;
+            height: 11px;
+            top: 5px;
+            left: 9px; }
         .parts-selector .list li .item-button .text {
           display: block;
           width: 0;

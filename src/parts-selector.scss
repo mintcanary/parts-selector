@@ -153,7 +153,10 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
             left: 5px;
           }
           &:after {
-            transform: rotate(90deg);
+            width: 3px;
+            height: 11px;
+            top: 5px;
+            left: 9px;
           }
         }
         .text {
@@ -255,7 +258,7 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
     .controls {
       .moveto.selected {
         cursor: pointer;
-        
+
         .icon:before,
         .icon:after {
           background-color: $parts-selector-control-icon-ready-colour;
