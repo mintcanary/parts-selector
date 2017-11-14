@@ -653,13 +653,11 @@ $(function() {
     function removeMoved() {
       setTimeout(function(){
         $('.moved').removeClass('just');
-        $( '.context.message' ).slideUp('1000');
+        $( '.context.message' ).slideUp('1000', function() {
+          $('.moved').removeClass('moved');
+          $( '.context.message' ).remove();
+        });
       }, 1000);
-
-      setTimeout(function(){
-        $('.moved').removeClass('moved');
-        $( '.context.message' ).remove();
-      }, 2000);
     }
 
     // clicking on remove button
@@ -677,11 +675,9 @@ $(function() {
         // show a message
         $($i).find('.selected.list ul').prepend('<span class="info alert">' + settings.noneSelected + '</span>');
         setTimeout(function(){
-          $( '.alert' ).slideUp('1000');
-
-          setTimeout(function(){
+          $( '.alert' ).slideUp('1000', function() {
             $( '.alert' ).remove();
-          }, 1000);
+          });
         }, 3000);
       }
     });
@@ -701,11 +697,9 @@ $(function() {
         // show a message
         $($i).find('.parts.list ul').prepend('<span class="info alert">' + settings.noneSelected + '</span>');
         setTimeout(function(){
-          $( '.alert' ).slideUp('1000');
-
-          setTimeout(function(){
+          $( '.alert' ).slideUp('1000', function() {
             $( '.alert' ).remove();
-          }, 1000);
+          });
         }, 3000);
       }
     });
