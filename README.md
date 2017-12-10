@@ -14,7 +14,7 @@ Include `jQuery`, `parts-selector.css` and `parts-selector.js`.
 Markup:
 
 ```html
-<div class="parts-selector" id="#my-parts-selector">
+<div class="parts-selector" id="my-parts-selector">
   <div class="parts list">
     <h3 class="list-heading">Available items</h3>
     <ul>
