@@ -38,7 +38,8 @@ $parts-selector-inline-icon-colour: $parts-selector-control-icon-colour !default
     border-radius: $parts-selector-list-border-radius;
     flex-basis: 0;
     min-height: 2em;
-
+    overflow: hidden;
+    
     @media screen and (min-width: $parts-selector-break-point) {
       max-height: $parts-selector-list-max-height;
       overflow: auto;
