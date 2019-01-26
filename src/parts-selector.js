@@ -15,7 +15,10 @@ $(function() {
       removed: "Item removed",
       noneSelected: "Click on items below to select them",
       itemButtons: false,
-      callback: function() {}
+      callback: function() {},
+	    item_added: function(item) {},
+	    item_removed: function(item) {}
+      
     }, options );
 
     // use finderSelect for select classes
@@ -148,6 +151,7 @@ $(function() {
         swapContextSelected($item);
         $($item).removeClass('selected');
         settings.callback.call(this);
+        settings.item_added($($item));
       });
 
       // swap context button
@@ -168,6 +172,7 @@ $(function() {
         swapContextParts($item);
         $($item).removeClass('selected');
         settings.callback.call(this);
+        settings.item_removed($($item));
       });
 
       // swap context button
